@@ -110,10 +110,7 @@ O endereço de e-mail usa o domínio reservado `.example` e não recebe mensagen
 
 ## Próximos passos
 
-1. Inicializar o repositório Git;
-2. Criar o primeiro commit da V0.1;
-3. Publicar o repositório no GitHub;
-4. Iniciar as melhorias visuais da V0.2.
+1. Iniciar as melhorias visuais da V0.2.
 
 ## Status
 
