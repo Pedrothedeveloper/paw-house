@@ -725,3 +725,53 @@ a.contact-item:focus-visible {
 section {
     scroll-margin-top: 88px;
 }
+
+.hero {
+    overflow: hidden;
+}
+
+.hero-layout {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.08fr)
+        minmax(320px, 0.92fr);
+    align-items: center;
+    gap: clamp(2rem, 6vw, 5rem);
+}
+
+.hero-visual {
+    position: relative;
+    margin: 0;
+}
+
+.hero-visual::before {
+    position: absolute;
+    inset: 1.5rem -1.5rem -1.5rem 1.5rem;
+    background-color: rgb(233 155 95 / 28%);
+    border-radius: calc(var(--border-radius) * 2);
+    content: "";
+    transform: rotate(2deg);
+}
+
+.hero-visual img {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: calc(var(--border-radius) * 2);
+    box-shadow: 0 24px 60px rgb(29 43 38 / 20%);
+}
+
+@media (max-width: 900px) {
+    .hero-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        max-width: 720px;
+    }
+
+    .hero-visual {
+        width: min(100%, 560px);
+    }
+}
