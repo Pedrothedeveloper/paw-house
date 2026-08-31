@@ -382,11 +382,9 @@ img {
     position: absolute;
     inset: 0 0 auto;
     height: 4px;
-    background: linear-gradient(
-        90deg,
-        var(--color-primary),
-        var(--color-accent)
-    );
+    background: linear-gradient(90deg,
+            var(--color-primary),
+            var(--color-accent));
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.25s ease;
@@ -513,15 +511,27 @@ img {
     padding: 1.5rem;
     background-color: var(--color-background-soft);
     border: 1px solid var(--color-border);
+    border-inline-start: 4px solid var(--color-primary);
     border-radius: var(--border-radius);
 }
 
+.about-value:nth-child(2) {
+    width: calc(100% - 1.5rem);
+    margin-inline-start: 1.5rem;
+}
+
 .about-value-number {
-    flex-shrink: 0;
-    color: var(--color-primary);
-    font-size: 0.85rem;
+    display: grid;
+    place-items: center;
+    flex: 0 0 42px;
+    aspect-ratio: 1;
+    color: #ffffff;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 0 6px rgb(38 115 99 / 10%);
+    font-size: 0.8rem;
     font-weight: 700;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
 }
 
 .about-value h3 {
@@ -537,6 +547,11 @@ img {
 @media (max-width: 800px) {
     .about-grid {
         grid-template-columns: 1fr;
+    }
+
+    .about-value:nth-child(2) {
+        width: 100%;
+        margin-inline-start: 0;
     }
 }
 
@@ -785,8 +800,7 @@ section {
 .hero-layout {
     display: grid;
     grid-template-columns:
-        minmax(0, 1.08fr)
-        minmax(320px, 0.92fr);
+        minmax(0, 1.08fr) minmax(320px, 0.92fr);
     align-items: center;
     gap: clamp(2rem, 6vw, 5rem);
 }
