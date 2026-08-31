@@ -827,3 +827,29 @@ section {
         width: min(100%, 560px);
     }
 }
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .button:hover,
+    .product-card:hover,
+    .service-card:hover,
+    .service-card:focus-within {
+        transform: none;
+    }
+
+    .product-card:hover .product-media img,
+    .service-link:hover span,
+    .back-to-top:hover span {
+        transform: none;
+    }
+}
