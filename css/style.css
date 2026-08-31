@@ -279,6 +279,25 @@ img {
         transform 0.2s ease;
 }
 
+.product-media {
+    overflow: hidden;
+    margin: -0.5rem -0.5rem 1.25rem;
+    aspect-ratio: 1;
+    background-color: var(--color-background-soft);
+    border-radius: calc(var(--border-radius) - 2px);
+}
+
+.product-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.product-card:hover .product-media img {
+    transform: scale(1.04);
+}
+
 .product-card:hover {
     border-color: var(--color-primary);
     box-shadow: 0 12px 30px rgb(29 43 38 / 14%);
