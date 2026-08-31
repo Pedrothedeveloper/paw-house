@@ -363,12 +363,45 @@ img {
 }
 
 .service-card {
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     padding: 2rem;
     background-color: var(--color-background);
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius);
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.service-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--color-primary),
+        var(--color-accent)
+    );
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+.service-card:hover,
+.service-card:focus-within {
+    border-color: transparent;
+    box-shadow: 0 12px 30px rgb(29 43 38 / 12%);
+    transform: translateY(-8px);
+}
+
+.service-card:hover::before,
+.service-card:focus-within::before {
+    transform: scaleX(1);
 }
 
 .service-number {
