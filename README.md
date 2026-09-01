@@ -6,9 +6,9 @@ O projeto começa com HTML e CSS puros e será ampliado gradualmente até se tor
 
 ## Versão atual
 
-**V0.1 — Página institucional responsiva**
+**V0.2 — Refinamento visual e responsividade avançada**
 
-Nesta versão, os produtos e serviços são conteúdos estáticos. Ainda não existem carrinho, autenticação, banco de dados ou envio real de formulários.
+Nesta versão, a interface recebeu tipografia aprimorada, imagens próprias, novos tratamentos visuais, interações acessíveis e ajustes avançados de responsividade. Os produtos e serviços ainda são estáticos e não existem carrinho, autenticação, banco de dados ou envio real de formulários.
 
 ## Funcionalidades
 
@@ -21,7 +21,13 @@ Nesta versão, os produtos e serviços são conteúdos estáticos. Ainda não ex
 - Footer com navegação secundária;
 - Link para voltar ao topo;
 - Estados de hover e foco;
-- Layout adaptado para desktop, tablet e celular.
+- Layout adaptado para desktop, tablet e celular;
+- Imagens próprias na hero e nos produtos;
+- Cards de produtos com interação visual;
+- Cards de serviços com destaque por mouse e teclado;
+- Valores institucionais com composição escalonada;
+- Dados de contato organizados com CSS Grid;
+- Suporte à preferência por movimento reduzido.
 
 ## Tecnologias
 
@@ -81,7 +87,13 @@ petshop/index.html
 - Design responsivo;
 - Pseudoclasses e pseudoelementos;
 - Estados de hover e foco;
-- Noções iniciais de acessibilidade.
+- Noções iniciais de acessibilidade;
+- `aspect-ratio` e `object-fit`;
+- Carregamento adiado de imagens com `loading="lazy"`;
+- Propriedades lógicas do CSS;
+- Áreas nomeadas do CSS Grid;
+- `:nth-child()` e `:focus-within`;
+- `prefers-reduced-motion`.
 
 ## Identidade visual
 
@@ -96,7 +108,7 @@ O endereço de e-mail usa o domínio reservado `.example` e não recebe mensagen
 ## Roadmap
 
 - [x] V0.1 — Estrutura institucional e conteúdo estático;
-- [ ] V0.2 — Refinamento visual, tipografia, imagens e responsividade avançada;
+- [x] V0.2 — Refinamento visual, tipografia, imagens e responsividade avançada;
 - [ ] V0.3 — Menu mobile e interações com JavaScript;
 - [ ] V0.4 — Produtos renderizados dinamicamente;
 - [ ] V0.5 — Carrinho no frontend;
@@ -110,8 +122,11 @@ O endereço de e-mail usa o domínio reservado `.example` e não recebe mensagen
 
 ## Próximos passos
 
-1. Iniciar as melhorias visuais da V0.2.
+1. Iniciar a V0.3;
+2. Criar um menu mobile acessível;
+3. Aprender seleção de elementos e eventos com JavaScript;
+4. Implementar as primeiras interações da interface.
 
 ## Status
 
-Projeto em desenvolvimento para fins educacionais e de portfólio.
+V0.2 concluída. Projeto em desenvolvimento para fins educacionais e de portfólio.
