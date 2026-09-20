@@ -191,6 +191,14 @@ img {
     color: var(--color-primary);
 }
 
+.main-navigation a.is-active {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.4rem;
+}
+
 .main-navigation a:focus-visible {
     color: var(--color-primary);
     outline: 2px solid var(--color-accent);

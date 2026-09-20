@@ -40,6 +40,51 @@ if (menuToggle && mainNavigation) {
         }
     });
 
+    if ("IntersectionObserver" in window) {
+        const sections = [];
+
+        navigationLinks.forEach((link) => {
+            const sectionSelector = link.getAttribute("href");
+            const section = document.querySelector(sectionSelector);
+
+            if (section) {
+                sections.push(section);
+            }
+        });
+
+        const updateActiveLink = (sectionId) => {
+            navigationLinks.forEach((link) => {
+                const isActive =
+                    link.getAttribute("href") === `#${sectionId}`;
+
+                link.classList.toggle("is-active", isActive);
+
+                if (isActive) {
+                    link.setAttribute("aria-current", "location");
+                } else {
+                    link.removeAttribute("aria-current");
+                }
+            });
+        };
+
+        const sectionObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        updateActiveLink(entry.target.id);
+                    }
+                });
+            },
+            {
+                rootMargin: "-35% 0px -55% 0px"
+            }
+        );
+
+        sections.forEach((section) => {
+            sectionObserver.observe(section);
+        });
+    }
+
     document.addEventListener("keydown", (event) => {
         const isExpanded =
             menuToggle.getAttribute("aria-expanded") === "true";
