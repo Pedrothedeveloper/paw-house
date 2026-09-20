@@ -97,6 +97,7 @@ if (menuToggle && mainNavigation) {
 }
 
 const productSearch = document.querySelector("#product-search");
+const productsGrid = document.querySelector(".products-grid");
 const productCards = Array.from(
     document.querySelectorAll(".product-card")
 );
@@ -157,5 +158,42 @@ if (
 
             updateProductResults();
         });
+    });
+}
+
+if (productsGrid) {
+    productsGrid.addEventListener("click", (event) => {
+        const detailsButton = event.target.closest(
+            ".product-details-toggle"
+        );
+
+        if (!detailsButton || !productsGrid.contains(detailsButton)) {
+            return;
+        }
+
+        const detailsId = detailsButton.getAttribute("aria-controls");
+        const detailsPanel = document.getElementById(detailsId);
+
+        if (!detailsPanel) {
+            return;
+        }
+
+        const isExpanded =
+            detailsButton.getAttribute("aria-expanded") === "true";
+        const detailsLabel = detailsButton.querySelector(
+            ".product-details-label"
+        );
+
+        detailsButton.setAttribute(
+            "aria-expanded",
+            String(!isExpanded)
+        );
+        detailsPanel.classList.toggle("is-open", !isExpanded);
+
+        if (detailsLabel) {
+            detailsLabel.textContent = isExpanded
+                ? "Ver detalhes"
+                : "Ocultar detalhes";
+        }
     });
 }
