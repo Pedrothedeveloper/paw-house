@@ -1,9 +1,9 @@
+document.documentElement.classList.add("js");
+
 const menuToggle = document.querySelector(".menu-toggle");
 const mainNavigation = document.querySelector("#main-navigation");
 
 if (menuToggle && mainNavigation) {
-    document.documentElement.classList.add("js");
-
     const closeMenu = () => {
         menuToggle.setAttribute("aria-expanded", "false");
         mainNavigation.classList.remove("is-open");
@@ -93,5 +93,69 @@ if (menuToggle && mainNavigation) {
             closeMenu();
             menuToggle.focus();
         }
+    });
+}
+
+const productSearch = document.querySelector("#product-search");
+const productCards = Array.from(
+    document.querySelectorAll(".product-card")
+);
+const filterButtons = document.querySelectorAll(".filter-button");
+const productResults = document.querySelector(".product-results");
+
+if (
+    productSearch &&
+    productCards.length > 0 &&
+    filterButtons.length > 0 &&
+    productResults
+) {
+    let selectedCategory = "todos";
+
+    const normalizeText = (text) =>
+        text
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .toLowerCase()
+            .trim();
+
+    const updateProductResults = () => {
+        const searchTerm = normalizeText(productSearch.value);
+
+        const visibleProducts = productCards.filter((card) => {
+            const cardCategory = card.dataset.category;
+            const cardContent = normalizeText(card.textContent);
+            const matchesCategory =
+                selectedCategory === "todos" ||
+                cardCategory === selectedCategory;
+            const matchesSearch = cardContent.includes(searchTerm);
+
+            card.hidden = !(matchesCategory && matchesSearch);
+
+            return !card.hidden;
+        });
+
+        const resultLabel = visibleProducts.length === 1
+            ? "produto encontrado"
+            : "produtos encontrados";
+
+        productResults.textContent =
+            `${visibleProducts.length} ${resultLabel}`;
+    };
+
+    productSearch.addEventListener("input", updateProductResults);
+
+    filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            selectedCategory = button.dataset.category;
+
+            filterButtons.forEach((filterButton) => {
+                const isActive = filterButton === button;
+
+                filterButton.classList.toggle("is-active", isActive);
+                filterButton.setAttribute("aria-pressed", String(isActive));
+            });
+
+            updateProductResults();
+        });
     });
 }

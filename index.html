@@ -87,8 +87,79 @@
                     </p>
                 </div>
 
+                <div class="product-controls" aria-label="Busca e filtros de produtos">
+                    <div class="product-search">
+                        <label for="product-search">Buscar produto</label>
+                        <input
+                            id="product-search"
+                            type="search"
+                            placeholder="Ex.: ração ou higiene"
+                            autocomplete="off"
+                        >
+                    </div>
+
+                    <div
+                        class="product-filters"
+                        role="group"
+                        aria-label="Filtrar por categoria"
+                    >
+                        <button
+                            class="filter-button is-active"
+                            type="button"
+                            data-category="todos"
+                            aria-pressed="true"
+                        >
+                            Todos
+                        </button>
+                        <button
+                            class="filter-button"
+                            type="button"
+                            data-category="alimentacao"
+                            aria-pressed="false"
+                        >
+                            Alimentação
+                        </button>
+                        <button
+                            class="filter-button"
+                            type="button"
+                            data-category="diversao"
+                            aria-pressed="false"
+                        >
+                            Diversão
+                        </button>
+                        <button
+                            class="filter-button"
+                            type="button"
+                            data-category="higiene"
+                            aria-pressed="false"
+                        >
+                            Higiene
+                        </button>
+                        <button
+                            class="filter-button"
+                            type="button"
+                            data-category="acessorios"
+                            aria-pressed="false"
+                        >
+                            Acessórios
+                        </button>
+                        <button
+                            class="filter-button"
+                            type="button"
+                            data-category="saude"
+                            aria-pressed="false"
+                        >
+                            Saúde
+                        </button>
+                    </div>
+
+                    <p class="product-results" aria-live="polite">
+                        5 produtos encontrados
+                    </p>
+                </div>
+
                 <div class="products-grid">
-                    <article class="product-card">
+                    <article class="product-card" data-category="alimentacao">
                         <figure class="product-media">
                             <img src="assets/images/produto-racao-premium.png"
                                 alt="Embalagem sem marca de ração natural ao lado de uma tigela com grãos." width="1254"
@@ -113,7 +184,7 @@
                         </div>
                     </article>
 
-                    <article class="product-card">
+                    <article class="product-card" data-category="diversao">
                         <figure class="product-media">
                             <img src="assets/images/produto-brinquedo-interativo.png"
                                 alt="Brinquedo interativo verde para pets com aberturas para petiscos." width="1254"
@@ -138,7 +209,7 @@
                         </div>
                     </article>
 
-                    <article class="product-card">
+                    <article class="product-card" data-category="higiene">
                         <figure class="product-media">
                             <img src="assets/images/produto-shampoo-pele-sensivel.png"
                                 alt="Frasco sem marca de shampoo suave ao lado de uma toalha e ingredientes naturais."
@@ -163,7 +234,7 @@
                         </div>
                     </article>
 
-                    <article class="product-card">
+                    <article class="product-card" data-category="acessorios">
                         <figure class="product-media">
                             <img src="assets/images/produto-cama-ortopedica.png"
                                 alt="Cama ortopédica verde para pets com almofada clara." width="1254" height="1254"
@@ -187,7 +258,7 @@
                             </a>
                         </div>
                     </article>
-                    <article class="product-card">
+                    <article class="product-card" data-category="saude">
                         <figure class="product-media">
                             <img src="assets/images/produto-petisco-dental.png"
                                 alt="Embalagem sem marca de petiscos dentais ao lado de uma tigela com os petiscos."
