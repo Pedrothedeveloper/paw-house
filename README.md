@@ -2,13 +2,13 @@
 
 Site demonstrativo de um pet shop, desenvolvido como projeto de aprendizado e portfólio.
 
-O projeto começa com HTML e CSS puros e será ampliado gradualmente até se tornar uma aplicação web completa, com JavaScript, carrinho, backend e banco de dados.
+O projeto utiliza HTML, CSS e JavaScript puros e será ampliado gradualmente até se tornar uma aplicação web completa, com carrinho, backend e banco de dados.
 
 ## Versão atual
 
-**V0.2 — Refinamento visual e responsividade avançada**
+**V0.3 — Menu mobile e interações com JavaScript**
 
-Nesta versão, a interface recebeu tipografia aprimorada, imagens próprias, novos tratamentos visuais, interações acessíveis e ajustes avançados de responsividade. Os produtos e serviços ainda são estáticos e não existem carrinho, autenticação, banco de dados ou envio real de formulários.
+Nesta versão, o site recebeu suas primeiras funcionalidades com JavaScript: menu mobile acessível, indicação da seção ativa, busca, filtros e detalhes expansíveis de produtos. Os produtos ainda estão escritos diretamente no HTML e não existem carrinho, autenticação, banco de dados ou envio real de formulários.
 
 ## Funcionalidades
 
@@ -27,13 +27,21 @@ Nesta versão, a interface recebeu tipografia aprimorada, imagens próprias, nov
 - Cards de serviços com destaque por mouse e teclado;
 - Valores institucionais com composição escalonada;
 - Dados de contato organizados com CSS Grid;
-- Suporte à preferência por movimento reduzido.
+- Suporte à preferência por movimento reduzido;
+- Menu mobile controlado por JavaScript e acessível por teclado;
+- Fechamento do menu com a tecla `Escape`;
+- Destaque automático da seção ativa na navegação;
+- Busca de produtos em tempo real, sem distinção entre acentos ou maiúsculas;
+- Filtros de produtos por categoria;
+- Contagem de resultados da busca;
+- Detalhes expansíveis nos cards de produtos;
+- Estados acessíveis com `aria-expanded`, `aria-pressed` e `aria-live`.
 
 ## Tecnologias
 
 - HTML5;
 - CSS3;
-- JavaScript, reservado para as próximas versões;
+- JavaScript puro para eventos e manipulação do DOM;
 - Git e GitHub para controle de versão.
 
 O projeto não utiliza frameworks, bibliotecas ou dependências externas nesta etapa.
@@ -93,7 +101,17 @@ petshop/index.html
 - Propriedades lógicas do CSS;
 - Áreas nomeadas do CSS Grid;
 - `:nth-child()` e `:focus-within`;
-- `prefers-reduced-motion`.
+- `prefers-reduced-motion`;
+- Variáveis, constantes e funções em JavaScript;
+- Arrays e métodos `forEach()` e `filter()`;
+- Seleção de elementos com `querySelector()` e `querySelectorAll()`;
+- Eventos com `addEventListener()`;
+- Manipulação de classes, atributos e conteúdo do DOM;
+- Atributos personalizados com `data-*` e acesso por `dataset`;
+- Delegação de eventos com `closest()`;
+- Observação de seções com `IntersectionObserver`;
+- Normalização de texto para busca;
+- Estados ARIA e melhoria progressiva.
 
 ## Identidade visual
 
@@ -109,7 +127,7 @@ O endereço de e-mail usa o domínio reservado `.example` e não recebe mensagen
 
 - [x] V0.1 — Estrutura institucional e conteúdo estático;
 - [x] V0.2 — Refinamento visual, tipografia, imagens e responsividade avançada;
-- [ ] V0.3 — Menu mobile e interações com JavaScript;
+- [x] V0.3 — Menu mobile e interações com JavaScript;
 - [ ] V0.4 — Produtos renderizados dinamicamente;
 - [ ] V0.5 — Carrinho no frontend;
 - [ ] V0.6 — Persistência com `localStorage`;
@@ -122,11 +140,11 @@ O endereço de e-mail usa o domínio reservado `.example` e não recebe mensagen
 
 ## Próximos passos
 
-1. Iniciar a V0.3;
-2. Criar um menu mobile acessível;
-3. Aprender seleção de elementos e eventos com JavaScript;
-4. Implementar as primeiras interações da interface.
+1. Iniciar a V0.4;
+2. Representar os produtos com um array de objetos;
+3. Renderizar os cards dinamicamente com JavaScript;
+4. Adaptar busca, filtros e detalhes à nova fonte de dados.
 
 ## Status
 
-V0.2 concluída. Projeto em desenvolvimento para fins educacionais e de portfólio.
+V0.3 concluída. Projeto em desenvolvimento para fins educacionais e de portfólio.
